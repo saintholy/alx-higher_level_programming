@@ -1,37 +1,23 @@
 #!/usr/bin/python3
 
-
-
 def safe_print_list_integers(my_list=[], x=0):
 
-        """Print the first x elements of a list that are integers.
+        counter = 0
 
-            Args:
+            for i in range(x):
 
-                    my_list (list): The list to print elements from.
+                        try:
 
-                            x (int): The number of elements of my_list to print.
+                                        print("{:d}".format(my_list[i]), end="")
 
-                                Returns:
+                                                except (ValueError, TypeError):
 
-                                        The number of elements printed.
+                                                                pass
 
-                                            """
+                                                                    else:
 
-                                                ret = 0
+                                                                                    counter += 1
 
-                                                    for i in range(0, x):
+                                                                                        print()
 
-                                                                try:
-
-                                                                                print("{:d}".format(my_list[i]), end="")
-
-                                                                                            ret += 1
-
-                                                                                                    except (ValueError, TypeError):
-
-                                                                                                                    continue
-
-                                                                                                                    print("")
-
-                                                                                                                        return (ret)
+                                                                                            return (counter)
